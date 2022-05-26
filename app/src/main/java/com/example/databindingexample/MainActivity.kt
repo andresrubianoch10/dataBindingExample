@@ -12,5 +12,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.buttonFormSubmit.setOnClickListener {
+            sayHi()
+        }
+    }
+
+    private fun sayHi() {
+        binding.textViewFormGreetings.text = "Hello, ${binding.editTextFormInput.text}"
     }
 }
